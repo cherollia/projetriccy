@@ -1,13 +1,14 @@
 
-import Navbar from "./componente/navbar";
-import Footer from "./componente/footer";
+
+import GalleryPage from "@/componente/Galery";
+import data from "./data.json";
+
 
 export default function Home() {
   return (
+    
    <main>
-
-    <Navbar  />
-      <Footer/>
+      <GalleryPage produits={data} />
    </main>
   );
 }
