@@ -45,10 +45,17 @@ const SacPage = () => {
   const [favorites, setFavorites] = useState<Set<number>>(new Set());
 
   const toggleFavorite = (id: number) => {
-    const newFavorites = new Set(favorites);
-    newFavorites.has(id) ? newFavorites.delete(id) : newFavorites.add(id);
-    setFavorites(newFavorites);
-  };
+  const newFavorites = new Set(favorites);
+
+  if (newFavorites.has(id)) {
+    newFavorites.delete(id);
+  } else {
+    newFavorites.add(id);
+  }
+
+  setFavorites(newFavorites);
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
@@ -70,12 +77,13 @@ const SacPage = () => {
             >
               <div className="relative">
                 <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={400}
-                  height={300}
-                  className="w-full max-h-[400px] object-cover rounded-2xl shadow-lg"
-                />
+                    src={product.image}
+                    alt={product.name}
+                    width={400}
+                    height={300}
+                    className="w-full max-h-[400px] object-cover rounded-2xl shadow-lg"
+                  />
+
 
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
                   {product.isNew && (
