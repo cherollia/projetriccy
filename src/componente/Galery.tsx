@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
+import Image from 'next/image';
 
 interface Product {
   name: string;
@@ -57,7 +58,7 @@ export default function GalleryPage({ produits }: Props) {
             className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
           >
             <div className="relative">
-              <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+              <Image src={product.image} alt={product.name} className="w-full h-64 object-cover width={400} height={300}" />
             </div>
 
             <div className="p-6">

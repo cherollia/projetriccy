@@ -19,12 +19,16 @@ const initialProducts: Product[] = [
   { id: 24, name: 'Babouche homme', price: '12000F', image: '/img24.jpeg' },
   { id: 25, name: 'Babouche homme', price: '12000F', image: '/img25.jpeg' },
   { id: 26, name: 'Babouche homme', price: '12000F', image: '/img26.jpeg' },
- 
+  { id: 27, name: 'Babouche homme', price: '12000F', image: '/img27.jpeg' },
+  { id: 28, name: 'Babouche homme', price: '12000F', image: '/img28.jpeg' },
+  { id: 29, name: 'Babouche homme', price: '12000F', image: '/img29.jpeg' },
+  { id: 30, name: 'Babouche homme', price: '12000F', image: '/img30.jpeg' },
+  { id: 31, name: 'Babouche homme', price: '12000F', image: '/img31.jpeg' },
 ];
 
 export default function BaboucheHommePage() {
   const [products] = useState<Product[]>(initialProducts);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [,setCart] = useState<Product[]>([]);
   const [addedMessage, setAddedMessage] = useState<string | null>(null);
 
   const addToCart = (product: Product) => {
