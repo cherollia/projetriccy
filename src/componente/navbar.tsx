@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react'; // icônes (optionnel, utilise Heroicons ou Lucide)
+import { ShoppingCart } from 'lucide-react';
+
+
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +14,8 @@ export default function Navbar() {
   const [showShoesMenu, setShowShoesMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -92,6 +97,7 @@ export default function Navbar() {
           </div>
         </div>
 
+
         {/* Connexion / Inscription (desktop) */}
         {isMounted && (
           <div className="hidden md:flex items-center gap-3">
@@ -101,7 +107,14 @@ export default function Navbar() {
             <Link href="/inscription" className="text-sm font-medium px-4 py-2 rounded-full bg-pink-500 text-white hover:bg-pink-600 transition">
               Inscription
             </Link>
+            <div className="relative cursor-pointer">
+          <Link href="/panier" className="text-pink-600 hover:text-pink-700">
+            <ShoppingCart size={26} />
+          </Link>
+        </div>
           </div>
+          
+
         )}
       </div>
 

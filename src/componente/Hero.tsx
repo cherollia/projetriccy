@@ -26,7 +26,9 @@ export default function Hero() {
           <Image
             src="/img33.jpeg"
             alt="Sac artisanal Riccy"
-            className="w-full max-h-[400px] object-cover rounded-2xl shadow-lg width={400} height={300}pp"
+            width={400} 
+            height={300}
+            className="w-full max-h-[400px] object-cover rounded-2xl shadow-lg"
           />
         </div>
       </div>

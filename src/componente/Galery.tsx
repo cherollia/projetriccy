@@ -28,28 +28,6 @@ export default function GalleryPage({ produits }: Props) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 px-6 py-10">
-      <form onSubmit={handleSubmit} className="mb-8 flex flex-col md:flex-row gap-4 items-center justify-center">
-        <input
-          type="text"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          placeholder="Nom du produit"
-          className="px-4 py-2 border border-gray-300 rounded-md w-full md:w-auto"
-        />
-        <input
-          type="text"
-          value={formData.price}
-          onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-          placeholder="Prix"
-          className="px-4 py-2 border border-gray-300 rounded-md w-full md:w-auto"
-        />
-        <button
-          type="submit"
-          className="px-6 py-2 bg-pink-600 text-white font-semibold rounded-md hover:bg-pink-700"
-        >
-          Ajouter
-        </button>
-      </form>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product, index) => (
@@ -58,7 +36,11 @@ export default function GalleryPage({ produits }: Props) {
             className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
           >
             <div className="relative">
-              <Image src={product.image} alt={product.name} className="w-full h-64 object-cover width={400} height={300}" />
+              <Image src={product.image} 
+              alt={product.name} 
+               width={400} 
+               height={300}
+              className="w-full h-64 object-cover" />
             </div>
 
             <div className="p-6">
